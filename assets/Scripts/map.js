@@ -189,20 +189,24 @@ cc.Class({
 			// if (this.tryCatchStarfalse == false) {
 			// 通过指定的 tile 坐标获取对应的 TiledTile。
 			this.stars.getTiledTileAt(newTile.x, newTile.y, true)
-			//如果一个 tile 已经放在那个位置，那么它将被删除。
+			//如果一个 tile 已经放在那个位置，那么它将被删除。 
 			this.stars.setTileGIDAt(0, newTile.x, newTile.y)
 			// console.log('removeTileAt: ', newTile)
-			// cc.log("===>eat stars<==", newTile.x);
+			// cc.log("===>eat stars<==", newTile.x); 
 			if (newTile.x == 4) {
 				this.dialog.init(npc1);
 			} else {
 				this.dialog.init(npc2);
+				//切换场景 
+				this.node.runAction(cc.sequence(cc.fadeOut(1.0), cc.callFunc(function() {
+					cc.director.loadScene('NewGame')
+				})));
 			}
 			// }
 		}
 	},
 
-	//将像素坐标转化为瓦片坐标
+	//将像素坐标转化为瓦片坐标 
 	getTilePos: function(posInPixel) {
 		let mapSize = this.node.getContentSize();
 		let tileSize = this.tiledMap.getTileSize();
@@ -213,7 +217,7 @@ cc.Class({
 
 	updatePlayerPos: function() {
 		let pos = this.barriers.getPositionAt(this.playerTile);
-		// cc.log(pos, "===>pos")
+		// cc.log(pos, "===>pos") 
 		this.player.setPosition(pos);
 		// this.smogMove(pos)
 	},

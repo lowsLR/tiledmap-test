@@ -9,30 +9,24 @@ cc.Class({
 	extends: cc.Component,
 
 	properties: {
-		// foo: {
-		//     // ATTRIBUTES:
-		//     default: null,        // The default value will be used only when the component attaching
-		//                           // to a node for the first time
-		//     type: cc.SpriteFrame, // optional, default is typeof default
-		//     serializable: true,   // optional, default is true
-		// },
-		// bar: {
-		//     get () {
-		//         return this._bar;
-		//     },
-		//     set (value) {
-		//         this._bar = value;
-		//     }
-		// },
+		prefabHero: cc.Prefab,
+		prefabNpc: cc.Prefab,
 	},
 
 	// LIFE-CYCLE CALLBACKS:
 
-	onLoad() {
-		// this.node.setOpacity(0);
+	onLoad() {	
+		let scene = cc.director.getScene();
+		for (let i = 1; i < 4; i++) {
+			let nodeHero = cc.instantiate(this.prefabHero);
+			nodeHero.parent = scene;
+			nodeHero.setPosition(150 * i, 400);
+			let nodeNpc = cc.instantiate(this.prefabNpc);
+			nodeNpc.parent = scene;
+			nodeNpc.setPosition(150 * i, 200);
+		}
 		this.node.opacity = 0;
 		this.node.runAction(cc.fadeIn(1.0));
-		// cc.log(this.node, "===>NewGamge")
 	},
 
 	start() {

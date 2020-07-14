@@ -88,11 +88,6 @@ cc.Class({
 			} else {
 				this.endText = true;
 				this.nowText = null;
-				// cc.director.loadScene("NewGame");
-
-				this.node.runAction(cc.sequence(cc.fadeOut(1.0), cc.callFunc(function() {
-					cc.director.loadScene('NewGame')
-				})));
 			}
 			this.tt = 0;
 		}
