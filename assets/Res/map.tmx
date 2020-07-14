@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.1" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="3">
+ <tileset firstgid="1" name="barriers" tilewidth="32" tileheight="32" tilecount="36" columns="6">
+  <image source="barriers.png" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="37" name="ground" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="ground.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="38" name="player" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="player.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="39" name="star" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="star.png" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="isStar" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer id="1" name="ground" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxTZWBgUB3Fo3gUj+JRPIpJxAAueznR
+  </data>
+ </layer>
+ <layer id="2" name="barriers" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAfkANiWShNLfOUgViFSuaJoNGj5g1f8whhbHrR5Yl1Fy7zCNmByz3EmkcsoJd5lOBRMDgBAAPnBTM=
+  </data>
+ </layer>
+ <layer id="3" name="stars" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDBegTiO1o2AUYAMAvawATw==
+  </data>
+ </layer>
+ <layer id="5" name="smog" width="20" height="20" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxTZmBgUB7Fo3gUj+JRPIpJxABjpTax
+  </data>
+ </layer>
+ <objectgroup id="4" name="players">
+  <object id="1" name="startPoint" gid="38" x="96" y="128" width="32" height="32"/>
+  <object id="2" name="endPoint" gid="38" x="256" y="128" width="32" height="32"/>
+ </objectgroup>
+</map>
