@@ -18,7 +18,7 @@ cc.Class({
 	// LIFE-CYCLE CALLBACKS:
 
 	onLoad() {
-		cc.log(this.progressBarView.progress, "==>??node")
+		// cc.log(this.progressBarView.progress, "==>??node") 
 	},
 
 	start() {
@@ -27,9 +27,13 @@ cc.Class({
 
 	update(dt) {
 		var progress = this.progressBarView.progress;
-		if (progress < 1) {
-			progress += dt;
-		} else {
+		// if (progress < 1) {
+		// 	progress -= dt;
+		// } else {
+		// 	progress = 1;
+		// }
+		progress -= dt;
+		if (progress < 0) {
 			progress = 1;
 		}
 		this.progressBarView.progress = progress;

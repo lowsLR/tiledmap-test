@@ -15,23 +15,38 @@ cc.Class({
 
 	// LIFE-CYCLE CALLBACKS:
 
-	onLoad() {	
-		let scene = cc.director.getScene();
-		for (let i = 1; i < 4; i++) {
-			let nodeHero = cc.instantiate(this.prefabHero);
-			nodeHero.parent = scene;
-			nodeHero.setPosition(150 * i, 400);
-			let nodeNpc = cc.instantiate(this.prefabNpc);
-			nodeNpc.parent = scene;
-			nodeNpc.setPosition(150 * i, 200);
-		}
+	onLoad() {
 		this.node.opacity = 0;
 		this.node.runAction(cc.fadeIn(1.0));
+		let scene = cc.director.getScene();
+		let nodeHero, nodeNpc, heroArr = [],
+			npcArr = [];
+		for (let i = 1; i < 4; i++) {
+			nodeHero = cc.instantiate(this.prefabHero);
+			nodeHero.parent = scene;
+			nodeHero.setPosition(150 * i, 400);
+			nodeNpc = cc.instantiate(this.prefabNpc);
+			nodeNpc.parent = scene;
+			nodeNpc.setPosition(150 * i, 200);
+			heroArr.push(nodeHero);
+			npcArr.push(nodeNpc);
+		}
+		// cc.log(heroArr, "==???nodeHero");
+		// let hero = heroArr[0].children[0].getComponent('action');
+		// hero.actionFun(1);
+		heroArr[0].children[0].getComponent('action').actionFun(1);
+		heroArr[1].children[0].getComponent('action').actionFun(1);
+		heroArr[2].children[0].getComponent('action').actionFun(2);
+		npcArr[0].children[0].getComponent('action').actionFun(2);
+		npcArr[1].children[0].getComponent('action').actionFun(1);
+		npcArr[2].children[0].getComponent('action').actionFun(1);
+		// cc.log(hero,"==???预制资源");
 	},
 
 	start() {
 
 	},
 
-	// update (dt) {},
+	// update (dt) {
+	// },
 });

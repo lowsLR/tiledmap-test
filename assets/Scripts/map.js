@@ -54,7 +54,7 @@ cc.Class({
 
 		cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
 
-		this.dialog = this.dialogNode.getComponent('dialog');
+		this.dialog = this.dialogNode.getComponent('dialog');//获取指定节点
 		// this.dialog.init(npc2)
 		this.dialog.closeTextData() //初始化关闭对话框
 		// 战争迷雾
