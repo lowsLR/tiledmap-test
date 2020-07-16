@@ -34,13 +34,14 @@ cc.Class({
 		// cc.log(heroArr, "==???nodeHero");
 		// let hero = heroArr[0].children[0].getComponent('action');
 		// hero.actionFun(1);
+		//getComponent 获取指定的节点(js名称) 
 		heroArr[0].children[0].getComponent('action').actionFun(1);
 		heroArr[1].children[0].getComponent('action').actionFun(1);
 		heroArr[2].children[0].getComponent('action').actionFun(2);
 		npcArr[0].children[0].getComponent('action').actionFun(2);
 		npcArr[1].children[0].getComponent('action').actionFun(1);
 		npcArr[2].children[0].getComponent('action').actionFun(1);
-		// cc.log(hero,"==???预制资源");
+		// cc.log(hero,"==???预制资源")；
 	},
 
 	start() {
