@@ -11,6 +11,7 @@ cc.Class({
 	properties: {
 		prefabHero: cc.Prefab,
 		prefabNpc: cc.Prefab,
+		btn: [cc.Button]
 	},
 
 	// LIFE-CYCLE CALLBACKS:
@@ -19,8 +20,9 @@ cc.Class({
 		this.node.opacity = 0;
 		this.node.runAction(cc.fadeIn(1.0));
 		let scene = cc.director.getScene();
-		let nodeHero, nodeNpc, heroArr = [],
-			npcArr = [];
+		let nodeHero, nodeNpc;
+		this.heroArr = [];
+		this.npcArr = [];
 		for (let i = 1; i < 4; i++) {
 			nodeHero = cc.instantiate(this.prefabHero);
 			nodeHero.parent = scene;
@@ -28,22 +30,27 @@ cc.Class({
 			nodeNpc = cc.instantiate(this.prefabNpc);
 			nodeNpc.parent = scene;
 			nodeNpc.setPosition(150 * i, 200);
-			heroArr.push(nodeHero);
-			npcArr.push(nodeNpc);
+			this.heroArr.push(nodeHero);
+			this.npcArr.push(nodeNpc);
 		}
-		// cc.log(heroArr, "==???nodeHero");
-		// let hero = heroArr[0].children[0].getComponent('action');
-		// hero.actionFun(1);
-		//getComponent 获取指定的节点(js名称) 
-		heroArr[0].children[0].getComponent('action').actionFun(1);
-		heroArr[1].children[0].getComponent('action').actionFun(1);
-		heroArr[2].children[0].getComponent('action').actionFun(2);
-		npcArr[0].children[0].getComponent('action').actionFun(2);
-		npcArr[1].children[0].getComponent('action').actionFun(1);
-		npcArr[2].children[0].getComponent('action').actionFun(1);
-		// cc.log(hero,"==???预制资源")；
 	},
-
+	actionFun(index, dt, cloum, zl) {
+		// cc.log("你获取到了index",index,zl)
+		switch (index) {
+			case 1:
+				this.heroArr[0].children[0].getComponent('action').setActionFun(index, dt, cloum);
+				break;
+			case 2:
+				this.npcArr[0].children[0].getComponent('action').setActionFun(index, dt, cloum);
+				break;
+			case 3:
+				this.npcArr[2].children[0].getComponent('action').setActionFun(index, dt, cloum, zl);
+				break;
+			case 4:
+				this.npcArr[1].children[0].getComponent('action').setActionFun(index, dt, cloum, zl);
+				break;
+		}
+	},
 	start() {
 
 	},

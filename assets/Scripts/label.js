@@ -15,10 +15,12 @@ cc.Class({
 	// LIFE-CYCLE CALLBACKS:
 
 	onLoad() {
-		this.node.color = new cc.color(255, 255, 0, 255);
-		cc.log(this.battleLabel.string, "===>???") // 
-		this.battleLabel.string = "战斗开始"
-		
+
+		this.scheduleOnce(function() {
+			this.node.color = new cc.color(255, 255, 0, 255);
+			this.battleLabel.string = "战斗开始";
+		}, 2);
+
 	},
 	start() {
 
