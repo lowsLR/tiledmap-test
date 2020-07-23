@@ -27,7 +27,7 @@ cc.Class({
 
 	onLoad() {
 		cc.systemEvent.on('keydown', this.onKeyDown, this);
-		window.dialog = this.node; //将dialog这个节点全局挂载
+		window.dialog = this.node; //将dialog这个节点全局挂载 两周都是这样
 	},
 	//人物初始化
 	init(textDataArr) {

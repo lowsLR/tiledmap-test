@@ -171,7 +171,7 @@
       "array": [
         0,
         0,
-        500.56268338740557,
+        517.01716605931,
         0,
         0,
         0,
@@ -746,7 +746,7 @@
       "__id__": 16
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 18
@@ -817,7 +817,7 @@
     "_dstBlendFactor": 771,
     "_spriteFrame": null,
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -838,7 +838,7 @@
       "__id__": 16
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 20
@@ -1388,6 +1388,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_useOriginalSize": false,
     "_string": "CcosCreator",
     "_N$string": "CcosCreator",
@@ -1482,6 +1484,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_useOriginalSize": false,
     "_string": "Labelxxxxxxxxxxxxxxxxxxxxxabelxxxxxxxxxxxxxxxxxxxxxabelxxxxxxxxxxxxxxxxxxxxxabelxxxxxxxxxxxxxxxxxxxxxabelxxxxxxxxxxxxxxxxxxxxx",
     "_N$string": "Labelxxxxxxxxxxxxxxxxxxxxxabelxxxxxxxxxxxxxxxxxxxxxabelxxxxxxxxxxxxxxxxxxxxxabelxxxxxxxxxxxxxxxxxxxxxabelxxxxxxxxxxxxxxxxxxxxx",

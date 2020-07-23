@@ -35,7 +35,7 @@ cc.Class({
 		}
 	},
 	actionFun(index, dt, cloum, zl) {
-		// cc.log("你获取到了index",index,zl)
+		// cc.log("你获取到了index",index,zl)  
 		switch (index) {
 			case 1:
 				this.heroArr[0].children[0].getComponent('action').setActionFun(index, dt, cloum);
