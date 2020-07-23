@@ -9,7 +9,7 @@ cc.Class({
 	extends: cc.Component,
 
 	properties: {
-
+		prefabNpc: cc.Prefab
 	},
 
 	// LIFE-CYCLE CALLBACKS:
@@ -22,8 +22,8 @@ cc.Class({
 
 	},
 
-	// update (dt) {}, 
-	// 执行运动函数 
+	// update (dt) {},
+	// 执行运动函数  
 	setActionFun(index, dt, cloum, zl) {
 		switch (index) {
 			case 1:
@@ -45,7 +45,7 @@ cc.Class({
 			cc.moveTo(dt, cc.v2(-2, -5)),
 		), cloum)
 	},
-	// 后退闪避技能
+	// 后退闪避技能 
 	setMoveBySb(dt, cloum) {
 		return cc.sequence(
 			cc.moveBy(dt, cc.v2(0, -20)).easing(cc.easeIn(2.0)),
@@ -54,7 +54,7 @@ cc.Class({
 	},
 	// 向前攻击
 	setMoveScaleToAk(dt, cloum, zl) {
-		// 垂直攻击 /*zl 1垂直2斜对*/
+		// 垂直攻击 /*zl 1垂直2斜对*/ 
 		if (zl == 1) {
 			return cc.sequence(
 				cc.moveTo(dt, cc.v2(0, -10)).easing(cc.easeOut(1.0)),
